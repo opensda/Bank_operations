@@ -1,13 +1,13 @@
 import json
 from datetime import datetime
 
-def read_operations(file_to_open):
+def read_operations(path):
     """
     Читаем файл json
     :param file_to_open: имя файла (путь)
     :return: содержимое json-файла
     """
-    with open(file_to_open, encoding='utf-8') as file:
+    with open(path, encoding='utf-8') as file:
         content = file.read()
         operations = json.loads(content)
         return operations

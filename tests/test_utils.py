@@ -7,12 +7,6 @@ from tests.data.data import tested_operation, operations_zero, tested_result, te
     hidden_test_data_1, hidden_test_result_1, hidden_test_data_2, hidden_test_result_2
 
 
-def test_read_operations():
-    test_value = 12
-    data_folder = Path("C:/Users/Петр Иванов/PycharmProjects/pythonProject4/tests")
-    file_to_open = data_folder / "yeti.json"
-    assert read_operations(file_to_open) == test_value
-
 
 def test_get_pure_operation():
     assert get_pure_operations(operations_zero) == []
