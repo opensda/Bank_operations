@@ -4,7 +4,7 @@ from datetime import datetime
 def read_operations(path):
     """
     Читаем файл json
-    :param file_to_open: имя файла (путь)
+    :param path: имя файла (путь)
     :return: содержимое json-файла
     """
     with open(path, encoding='utf-8') as file:
