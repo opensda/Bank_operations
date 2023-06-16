@@ -36,8 +36,6 @@ def get_pure_operations(operations):
             continue
         elif operation.get('description') == None:
             continue
-        elif operation.get('from') == None:
-            continue
         elif operation.get('to') == None:
             continue
         pure_operations.append(operation)
@@ -88,7 +86,12 @@ def get_hidden_data(oper_srtd_by_date):
 
         # Маскировка для счета отправителя
 
-        if operation["from"].startswith('Счет'):
+        # Если ключ отсутствует, то присваиваем ему пустое значение
+
+        if operation.get("from") == None:
+            operation["from"] = ""
+
+        elif operation["from"].startswith('Счет'):
             bill = operation["from"]
 
             # Выделяем из строки номер счета

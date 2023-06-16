@@ -3,13 +3,32 @@ from pathlib import Path
 from utils import read_operations, get_pure_operations, get_lst_5_oper_srtd, get_hidden_data,\
     print_lst_5_opn
 
-DATA_FOLDER = Path("C:/Users/Петр Иванов/PycharmProjects/pythonProject4/src")
-FILE_TO_OPEN = DATA_FOLDER / "operations.json"
+PATH = "operations.json"
 
 
 if __name__ == '__main__':
-    operations = read_operations(FILE_TO_OPEN)
+    """
+    Программа выводит 5 последних успешных банковских операций клиента
+    """
+
+    # Считываем операции с файла данными
+
+    operations = read_operations(PATH)
+
+    # Оставляем, только те операции, в которых есть все необходимые данные:
+    # id транзакции, статус перевода, сумма операции и валюта, описание типа перевода,
+    # откуда (если имеется!) и куда был осуществлен перевод
+
     pure_operations = get_pure_operations(operations)
+
+    # Получаем 5 последних успешных операций, отсортированных по дате
+
     oper_srtd_by_date = get_lst_5_oper_srtd(pure_operations)
+
+    # Производим маскировку номеров счетов и карт
+
     hidden_data_operations = get_hidden_data(oper_srtd_by_date)
+
+    # Выводим 5 последних успешных операций
+
     print_lst_5_opn(hidden_data_operations)
