@@ -1,7 +1,7 @@
 import pytest
 
-from src.utils import get_pure_operations, get_lst_5_oper_srtd, get_hidden_data
-
+from src.utils import read_operations, get_pure_operations, get_lst_5_oper_srtd, get_hidden_data
+from pathlib import Path
 from tests.data.data import tested_operation, operations_zero, tested_result, tested_operation_2, \
     tested_result_2, tested_operation_3, tested_result_3, pure_operations_ts, pure_operations_ts_rst, \
     hidden_test_data_1, hidden_test_result_1, hidden_test_data_2, hidden_test_result_2
