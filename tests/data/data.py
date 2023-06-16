@@ -1,5 +1,5 @@
 # Данные для тестов test_get_pure_operation()
-operations_zero = [{'id': '1', '2': '2'}]
+operations_zero = [{'ids': '1', '2': '2'}]
 tested_operation = [
     {
         "id": 441945886,
@@ -31,22 +31,38 @@ tested_operation = [
         "to": "Счет 41421565395219882431"
     },
 ]
+
 tested_result = [
-  {
-    "id": 441945886,
-    "state": "EXECUTED",
-    "date": "2019-08-26T10:50:58.294041",
-    "operationAmount": {
-      "amount": "31957.58",
-      "currency": {
-        "name": "руб.",
-        "code": "RUB"
-      }
+    {
+        "id": 441945886,
+        "state": "EXECUTED",
+        "date": "2019-08-26T10:50:58.294041",
+        "operationAmount": {
+            "amount": "31957.58",
+            "currency": {
+                "name": "руб.",
+                "code": "RUB"
+            }
+        },
+        "description": "Перевод организации",
+        "from": "Maestro 1596837868705199",
+        "to": "Счет 64686473678894779589"
     },
-    "description": "Перевод организации",
-    "from": "Maestro 1596837868705199",
-    "to": "Счет 64686473678894779589"
-  },]
+    {
+        "id": 587085106,
+        "state": "EXECUTED",
+        "date": "2018-03-23T10:45:06.972075",
+        "operationAmount": {
+            "amount": "48223.05",
+            "currency": {
+                "name": "руб.",
+                "code": "RUB"
+            }
+        },
+        "description": "Открытие вклада",
+        "to": "Счет 41421565395219882431"
+    },
+]
 tested_operation_2 = [
     {
         "id": 441945886,
